@@ -31,7 +31,8 @@ if (!String.prototype.format) {
             _.round(filterData("Humdity", "Temperature").map("Celsius").mean(), 1),
             _.round(filterData("Humdity", "Humdity").mean(), 1),
             _.round(filterData("Humdity", "HeatIndex").map("Celsius").mean(), 1),
-            _.round(filterData("Failed", "status").value().length / data.length)
+            _.round(filterData("status", "status").value().length / data.length * 100, 1),
+            (new Date(_.takeRight(data).time)).toLocaleString()
         ));
         $("#loading").html("");
         _.reverse(data);
