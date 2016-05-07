@@ -15,7 +15,7 @@ function filterData(type, field) {
             type: 'line',
             data: {
                 labels: filterData("PM01", "time").map(function(n) {
-                    return (new Date(n)).toLocaleTimeString();
+                    return $.timeago(new Date(n));
                 }).value(),
                 datasets: [
                     {
@@ -90,7 +90,7 @@ function filterData(type, field) {
             type: 'line',
             data: {
                 labels: filterData("Humdity", "time").map(function(n) {
-                    return (new Date(n)).toLocaleTimeString();
+                    return $.timeago(new Date(n));
                 }).value(),
                 datasets: [
                     {
@@ -144,7 +144,7 @@ function filterData(type, field) {
             type: 'line',
             data: {
                 labels: filterData("Humdity", "time").map(function(n) {
-                    return (new Date(n)).toLocaleTimeString();
+                    return $.timeago(new Date(n));
                 }).value(),
                 datasets: [
                     {
