@@ -32,7 +32,7 @@ if (!String.prototype.format) {
             _.round(filterData("Humdity", "Humdity").mean(), 1),
             _.round(filterData("Humdity", "HeatIndex").map("Celsius").mean(), 1),
             _.round(filterData("status", "status").value().length / data.length * 100, 1),
-            (new Date(_.takeRight(data).time)).toLocaleString()
+            (new Date(_.takeRight(data)[0].time)).toLocaleString()
         ));
         $("#loading").html("");
         _.reverse(data);
@@ -45,9 +45,9 @@ if (!String.prototype.format) {
                 }).value(),
                 datasets: [
                     {
-                        label: "PM0.1",
+                        label: "PM1.0",
                         fill: false,
-                        lineTension: 0.1,
+                        lineTension: 1,
                         backgroundColor: "rgba(156, 39, 176, 0.4)",
                         borderColor: "rgb(156, 39, 176)",
                         borderCapStyle: 'butt',
@@ -68,7 +68,7 @@ if (!String.prototype.format) {
                     {
                         label: "PM2.5",
                         fill: false,
-                        lineTension: 0.1,
+                        lineTension: 1,
                         backgroundColor: "rgba(33, 150, 244, 0.4)",
                         borderColor: "rgb(33, 150, 244)",
                         borderCapStyle: 'butt',
@@ -89,7 +89,7 @@ if (!String.prototype.format) {
                     {
                         label: "PM10",
                         fill: false,
-                        lineTension: 0.1,
+                        lineTension: 1,
                         backgroundColor: "rgba(0, 150, 136, 0.4)",
                         borderColor: "rgb(0, 150, 136)",
                         borderCapStyle: 'butt',
@@ -122,7 +122,7 @@ if (!String.prototype.format) {
                     {
                         label: "Temperature",
                         fill: false,
-                        lineTension: 0.1,
+                        lineTension: 1,
                         backgroundColor: "rgba(33, 150, 244, 0.4)",
                         borderColor: "rgb(33, 150, 244)",
                         borderCapStyle: 'butt',
@@ -143,7 +143,7 @@ if (!String.prototype.format) {
                     {
                         label: "Heat Index",
                         fill: false,
-                        lineTension: 0.1,
+                        lineTension: 1,
                         backgroundColor: "rgba(0, 150, 136, 0.4)",
                         borderColor: "rgb(0, 150, 136)",
                         borderCapStyle: 'butt',
@@ -176,7 +176,7 @@ if (!String.prototype.format) {
                     {
                         label: "Humdity",
                         fill: false,
-                        lineTension: 0.1,
+                        lineTension: 1,
                         backgroundColor: "rgba(156, 39, 176, 0.4)",
                         borderColor: "rgb(156, 39, 176)",
                         borderCapStyle: 'butt',
