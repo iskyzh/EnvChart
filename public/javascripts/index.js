@@ -6,10 +6,32 @@ function filterData(type, field) {
         })
         .map(field);
 }
+
+String.format = function() {
+    if(arguments.length === 0)
+        return null;
+
+    var str = arguments[0];
+    for(var i=1;i<arguments.length;i++) {
+        var re = new RegExp('\\{' + (i-1) + '\\}','gm');
+        str = str.replace(re, arguments[i]);
+    }
+    return str;
+}
+
 (function() {
     $(document).ready(function() {
         Chart.defaults.global.responsive = true;
         _.reverse(data);
+        $("#statusDiv").html($("statusTemplate").html().format(
+            $.timeago(data[0].time),
+            _.round(filterData("PM01", "PM01").mean()),
+            _.round(filterData("PM01", "PM25").mean()),
+            _.round(filterData("PM01", "PM10").mean()),
+            _.round(filterData("Humdity", "Temperature").map("Celsius").mean(), 1),
+            _.round(filterData("Humdity", "Humdity").mean(), 1),
+            _.round(filterData("Humdity", "HeatIndex").map("Celsius").mean(), 1)
+        ));
         var ctxAQ = $("#EnvAQChart");
         var AQChart = new Chart(ctxAQ, {
             type: 'line',

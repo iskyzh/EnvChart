@@ -6,6 +6,8 @@ block content
       div.col-xs-12
         h1= title
     div.row
+      div.col-lg-6#statusDiv
+        h2 Now Loading...
       div.col-lg-6
         canvas#EnvAQChart(width="400" height="400")
       div.col-lg-6
@@ -21,3 +23,33 @@ block content
   script(src="/javascripts/index.js")
   script(type='text/javascript').
     var data = !{JSON.stringify(data)};
+  template#statusTemplate
+    h2 Status
+    h3
+      small Last Update
+      br
+      span {0}
+    h3
+      small PM0.1 Avg
+      br
+      span {1}
+    h3
+      small PM2.5 Avg
+      br
+      span {2}
+    h3
+      small PM10 Avg
+      br
+      span {3}
+    h3
+      small Temperature Avg
+      br
+      span {4}
+    h3
+      small Humdity Avg
+      br
+      span {5}
+    h3
+      small Heat Index Avg
+      br
+      span {6}
