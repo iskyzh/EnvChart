@@ -22,7 +22,6 @@ if (!String.prototype.format) {
 (function() {
     $(document).ready(function() {
         Chart.defaults.global.responsive = true;
-        _.reverse(data);
         $("#statusDiv").html($("#statusTemplate").html().format(
             $.timeago(data[0].time),
             (new Date(data[0].time)).toLocaleString(),
@@ -33,6 +32,7 @@ if (!String.prototype.format) {
             _.round(filterData("Humdity", "Humdity").mean(), 1),
             _.round(filterData("Humdity", "HeatIndex").map("Celsius").mean(), 1)
         ));
+        _.reverse(data);
         var ctxAQ = $("#EnvAQChart");
         var AQChart = new Chart(ctxAQ, {
             type: 'line',
