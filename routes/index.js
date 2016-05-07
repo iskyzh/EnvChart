@@ -14,7 +14,7 @@ router.post('/' + config.apikey, function(req, res, next) {
   data = req.body.result;
   data.time = Date.now();
   result.unshift(data);
-  result = _.take(result, 50);
+  result = _.take(result, 300);
   res.json({"status": "success"}).end();
 });
 

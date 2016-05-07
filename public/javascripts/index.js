@@ -30,7 +30,8 @@ if (!String.prototype.format) {
             _.round(filterData("PM01", "PM10").mean()),
             _.round(filterData("Humdity", "Temperature").map("Celsius").mean(), 1),
             _.round(filterData("Humdity", "Humdity").mean(), 1),
-            _.round(filterData("Humdity", "HeatIndex").map("Celsius").mean(), 1)
+            _.round(filterData("Humdity", "HeatIndex").map("Celsius").mean(), 1),
+            _.round(filterData("Failed", "status").value().length / data.length)
         ));
         $("#loading").html("");
         _.reverse(data);

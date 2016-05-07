@@ -10,6 +10,7 @@ block content
         div.progress-bar.progress-bar-striped.active(style="width: 100%")
     div.row
       div.col-lg-6#statusDiv
+        h3 Now Loading...
       div.col-lg-6
         canvas#EnvAQChart(width="400" height="400")
       div.col-lg-6
@@ -32,7 +33,7 @@ block content
       br
       span {1}
       br
-      (small {0})
+      small ({0})
     div.col-lg-6: h3
       small PM0.1 Average
       br
@@ -60,3 +61,7 @@ block content
       small Heat Index Average
       br
       span {7}℃
+    div.col-lg-6: h3
+      small Sensor Failure
+      br
+      span {8}%
