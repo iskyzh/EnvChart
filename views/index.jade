@@ -5,9 +5,11 @@ block content
     div.row
       div.col-xs-12
         h1= title
+    div.row#loading
+      div.progress
+        div.progress-bar.progress-bar-striped.active(style="width: 100%")
     div.row
       div.col-lg-6#statusDiv
-        h2 Now Loading...
       div.col-lg-6
         canvas#EnvAQChart(width="400" height="400")
       div.col-lg-6
@@ -28,9 +30,9 @@ block content
     div.col-lg-6: h3
       small Last Update
       br
-      span {0}
+      span {1}
       br
-      small {1}
+      (small {0})
     div.col-lg-6: h3
       small PM0.1 Average
       br

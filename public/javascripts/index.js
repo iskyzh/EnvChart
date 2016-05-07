@@ -32,6 +32,7 @@ if (!String.prototype.format) {
             _.round(filterData("Humdity", "Humdity").mean(), 1),
             _.round(filterData("Humdity", "HeatIndex").map("Celsius").mean(), 1)
         ));
+        $("#loading").html("");
         _.reverse(data);
         var ctxAQ = $("#EnvAQChart");
         var AQChart = new Chart(ctxAQ, {
