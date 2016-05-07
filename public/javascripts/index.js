@@ -3,7 +3,7 @@ function filterData(type, data) {
         .chain(data)
         .reverse()
         .filter(function(n) {
-            return type in n;
+            return (type in n);
         })
         .map(data);
 }
@@ -16,10 +16,10 @@ function filterData(type, data) {
             data: {
                 labels: filterData("PM01", "time").map(function(n) {
                     return Date(n);
-                }),
+                }).value(),
                 datasets: [
                     {
-                        label: "My First dataset",
+                        label: "PM0.1",
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: "rgba(75,192,192,0.4)",
@@ -38,6 +38,48 @@ function filterData(type, data) {
                         pointRadius: 1,
                         pointHitRadius: 10,
                         data: filterData("PM01", "PM01").value()
+                    },
+                    {
+                        label: "PM2.5",
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderColor: "rgba(75,192,192,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(75,192,192,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: filterData("PM01", "PM25").value()
+                    },
+                    {
+                        label: "PM10",
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderColor: "rgba(75,192,192,1)",
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(75,192,192,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 1,
+                        pointHitRadius: 10,
+                        data: filterData("PM01", "PM10").value()
                     }
                 ]
             },
