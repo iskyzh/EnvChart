@@ -1,11 +1,11 @@
 function filterData(type, field) {
     return _
-        .chain(field)
+        .chain(data)
         .reverse()
         .filter(function(n) {
             return (type in n);
         })
-        .map(data);
+        .map(field);
 }
 (function() {
     $(document).ready(function() {
