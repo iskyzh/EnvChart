@@ -94,27 +94,6 @@ function filterData(type, field) {
                 }).value(),
                 datasets: [
                     {
-                        label: "Humdity",
-                        fill: false,
-                        lineTension: 0.1,
-                        backgroundColor: "rgba(156, 39, 176, 0.4)",
-                        borderColor: "rgb(156, 39, 176)",
-                        borderCapStyle: 'butt',
-                        borderDash: [],
-                        borderDashOffset: 0.0,
-                        borderJoinStyle: 'miter',
-                        pointBorderColor: "rgb(156, 39, 176)",
-                        pointBackgroundColor: "#fff",
-                        pointBorderWidth: 1,
-                        pointHoverRadius: 5,
-                        pointHoverBackgroundColor: "rgb(156, 39, 176)",
-                        pointHoverBorderColor: "rgba(221, 221, 221, 1)",
-                        pointHoverBorderWidth: 2,
-                        pointRadius: 1,
-                        pointHitRadius: 10,
-                        data: filterData("Humdity", "Humdity").value()
-                    },
-                    {
                         label: "Temperature",
                         fill: false,
                         lineTension: 0.1,
