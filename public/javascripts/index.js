@@ -25,6 +25,7 @@ if (!String.prototype.format) {
         _.reverse(data);
         $("#statusDiv").html($("#statusTemplate").html().format(
             $.timeago(data[0].time),
+            (new Date(data[0].time)).toLocaleString(),
             _.round(filterData("PM01", "PM01").mean()),
             _.round(filterData("PM01", "PM25").mean()),
             _.round(filterData("PM01", "PM10").mean()),

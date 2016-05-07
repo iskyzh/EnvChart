@@ -25,31 +25,36 @@ block content
     var data = !{JSON.stringify(data)};
   template#statusTemplate
     h2 Status
-    div.col-lg-3: h3
+    div.col-lg-6: h3
       small Last Update
       br
       span {0}
-    div.col-lg-3: h3
-      small PM0.1 Avg
+      hr
+      small {1}
+    div.col-lg-6: h3
+      small PM0.1 Average
       br
-      span {1}
-    div.col-lg-3: h3
-      small PM2.5 Avg
+      span {2}µg/m
+      sup 3
+    div.col-lg-6: h3
+      small PM2.5 Average
       br
-      span {2}
-    div.col-lg-3: h3
-      small PM10 Avg
+      span {3}µg/m
+      sup 3
+    div.col-lg-6: h3
+      small PM10 Average
       br
-      span {3}
-    div.col-lg-3: h3
-      small Temperature Avg
+      span {4}µg/m
+      sup 3
+    div.col-lg-6: h3
+      small Temperature Average
       br
-      span {4}
-    div.col-lg-3: h3
-      small Humdity Avg
+      span {5}℃
+    div.col-lg-6: h3
+      small Humdity Average
       br
-      span {5}
-    div.col-lg-3: h3
-      small Heat Index Avg
+      span {6}%
+    div.col-lg-6: h3
+      small Heat Index Average
       br
-      span {6}
+      span {7}℃
