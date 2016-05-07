@@ -23,7 +23,7 @@ String.format = function() {
     $(document).ready(function() {
         Chart.defaults.global.responsive = true;
         _.reverse(data);
-        $("#statusDiv").html($("statusTemplate").html().format(
+        $("#statusDiv").html($("#statusTemplate").html().format(
             $.timeago(data[0].time),
             _.round(filterData("PM01", "PM01").mean()),
             _.round(filterData("PM01", "PM25").mean()),
