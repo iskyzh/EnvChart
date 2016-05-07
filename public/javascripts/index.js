@@ -1,7 +1,6 @@
 function filterData(type, field) {
     return _
         .chain(data)
-        .reverse()
         .filter(function(n) {
             return (type in n);
         })
@@ -10,6 +9,7 @@ function filterData(type, field) {
 (function() {
     $(document).ready(function() {
         Chart.defaults.global.responsive = true;
+        _.reverse(data);
         var ctxAQ = $("#EnvAQChart");
         var AQChart = new Chart(ctxAQ, {
             type: 'line',
@@ -89,7 +89,7 @@ function filterData(type, field) {
         var TemChart = new Chart(ctxTem, {
             type: 'line',
             data: {
-                labels: filterData("Humdity", "time").map(function(n) {
+                labels: filterData("Temperature", "time").map(function(n) {
                     return $.timeago(new Date(n));
                 }).value(),
                 datasets: [
