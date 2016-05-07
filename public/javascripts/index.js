@@ -1,6 +1,6 @@
-function filterData(type, data) {
+function filterData(type, field) {
     return _
-        .chain(data)
+        .chain(field)
         .reverse()
         .filter(function(n) {
             return (type in n);
